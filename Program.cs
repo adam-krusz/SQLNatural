@@ -3,8 +3,7 @@ using OpenAI.GPT3.Managers;
 using OpenAI.GPT3.ObjectModels;
 using OpenAI.GPT3.ObjectModels.RequestModels;
 
-
-string dbFilePath = "C:\\Users\\adam.kruszewski\\sqlite\\chinook.db";
+string dbFilePath = "chinook.db";
 DatabaseHelper databaseHelper = new DatabaseHelper(dbFilePath);
 List<string> tablesStructure = databaseHelper.RetrieveStructure();
 foreach (string tableStructure in tablesStructure)

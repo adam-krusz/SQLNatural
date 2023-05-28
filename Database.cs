@@ -118,10 +118,11 @@ public void DisplayQueryResults(DataSet dataSet)
 
             foreach (DataRow row in table.Rows)
             {
-                string value = row[columnIndex].ToString();
-                int cellWidth = value.Length;
+                string? value = row[columnIndex].ToString();
+                int cellWidth = value?.Length ?? 0;
                 if (cellWidth > maxColumnWidth)
                     maxColumnWidth = cellWidth;
+
             }
 
             columnWidths[columnIndex] = maxColumnWidth;
@@ -145,7 +146,7 @@ public void DisplayQueryResults(DataSet dataSet)
         {
             for (int i = 0; i < table.Columns.Count; i++)
             {
-                string value = row[i].ToString();
+                string value = row[i]?.ToString() ?? "";
                 int columnWidth = Math.Min(columnWidths[i], bufferWidth - Console.CursorLeft);
                 Console.Write($"{value.PadRight(columnWidth)}\t");
             }

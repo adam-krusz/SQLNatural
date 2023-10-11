@@ -103,7 +103,7 @@ public class DatabaseHelper
             Console.WriteLine();
         }
     }
-public void DisplayQueryResults(DataSet dataSet)
+public static void DisplayQueryResults(DataSet dataSet)
 {
     int bufferWidth = Console.BufferWidth; // Get the console buffer width
 
